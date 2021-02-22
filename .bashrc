@@ -115,3 +115,15 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+alias pixel='ssh -p 8022 u0_a362@192.168.1.67'
+alias x200='ssh paul@192.168.1.225'
+alias mac='ssh caitlinperrone@192.168.1.28'
+
+stty -ixon
